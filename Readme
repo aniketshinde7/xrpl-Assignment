@@ -1,6 +1,5 @@
 # This container is running on `ubuntu:latest`.
 
-
 ## How to run
 
 ### From Github
@@ -8,9 +7,8 @@
 downloaded / cloned the [Github repo](https://github.com/aniketshinde7/xrpl-Assignment.git) 
 
 If you want to build the image manually, use 
-```
+
 docker build --tag xrpl:latest .
-```
 
 ### From the Docker Hub
 
