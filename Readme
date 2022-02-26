@@ -1,0 +1,47 @@
+# This container is running on `ubuntu:latest`.
+
+
+## How to run
+
+### From Github
+
+downloaded / cloned the [Github repo](https://github.com/WietseWind/docker-rippled) 
+
+If you want to build the image manually, use 
+```
+docker build --tag xrpl:latest .
+```
+
+### From the Docker Hub
+
+Use the image `aniketshinde7/xrpl`.
+
+```
+docker run -d \
+    --name xrpl \
+    -p 80:80 \
+    -v /my/local/disk/xrpld-config/:/config/ \
+    aniketshinde7/xrpl:latest
+```
+
+## Deployment on kubernetes 
+
+for deployment and service
+
+```
+kubectl apply -f .\xrpl-deployment.yaml
+```
+
+```
+kubectl apply -f .\xrpl-service.yaml 
+```
+To get pods
+```
+kubectl get pods
+```
+To get service 
+```
+kubectl get service 
+```
+
+

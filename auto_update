@@ -1,0 +1,13 @@
+#! /bin/bash
+
+echo "checking for available updates:"
+sudo apt update;
+
+echo "performing upgrade:"
+sudo apt upgrade;
+
+echo "performing auto removal:"
+sudo apt autoremove;
+
+echo "system is ready to use !!"
+

@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: xrpl
+spec:
+  selector:
+    matchLabels:
+      run: xrpl
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        run: xrpl
+    spec:
+      containers:
+      - name: xrpl
+        image: aniketshinde7/xrpl
+        ports:
+        - containerPort: 80
+
+

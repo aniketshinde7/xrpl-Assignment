@@ -1,0 +1,19 @@
+#!/bin/bash
+
+self(){
+  DIR=$( cd "$( dirname "$0" )/" && pwd)
+  echo $DIR
+}
+
+echo "Stopping containers"
+docker ps -a|grep aniketshinde7/xrpl:latest|cut -d " " -f 1 |xargs -I___ docker stop ___
+
+if [[ $(docker images -a|grep aniketshinde7/xrpl:latest|wc -l) -gt "0" ]]; then
+  echo "Removing image"
+  docker rmi -f aniketshinde7/xrpl:latest
+fi
+
+echo "Building image"
+docker build --tag aniketshinde7/xrpl:latest $(self)/../.
+
+echo "Done, you can now run $(self)/up"
